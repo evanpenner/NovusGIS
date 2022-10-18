@@ -4,21 +4,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "projects")
-public class Project {
+@Table(name = "point_features")
+public class PointFeature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    @ManyToOne
-    private Customer customer;
-
-    @OneToMany
-    private List<PointFeature> features;
+    private double longitude;
+    private double latitude;
 }
