@@ -2,6 +2,7 @@ package com.evanpenner.novusgis.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.locationtech.jts.geom.Point;
 
 import javax.persistence.*;
 
@@ -13,7 +14,6 @@ public class PointFeature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private double longitude;
-    private double latitude;
+    
+    private Point geometry;
 }

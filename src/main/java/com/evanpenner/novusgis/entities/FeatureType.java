@@ -21,5 +21,6 @@ public class FeatureType {
     private String icon;
     private String color;
 
+    //TODO
     // private List<Status?> statusOptions;
 }
