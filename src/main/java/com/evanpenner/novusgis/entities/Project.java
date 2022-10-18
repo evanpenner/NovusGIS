@@ -20,5 +20,8 @@ public class Project {
     private Customer customer;
 
     @OneToMany
-    private List<PointFeature> features;
+    private List<PointFeature> pointFeatures;
+
+    @OneToMany
+    private List<LineFeature> lineFeatures;
 }

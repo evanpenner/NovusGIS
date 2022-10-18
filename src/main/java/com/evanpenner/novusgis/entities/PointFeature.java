@@ -14,6 +14,9 @@ public class PointFeature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private Point geometry;
+
+    @ManyToOne
+    private FeatureType featureType;
 }

@@ -1,23 +1,22 @@
 package com.evanpenner.novusgis.entities;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.locationtech.jts.geom.LineString;
 
 import javax.persistence.*;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "line_features")
-public class LineFeature {
+public class StatusValue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LineString geometry;
-    private String name;
+
+    private String value;
+
+    private String style;
 
     @ManyToOne
-    private FeatureType featureType;
+    private StatusOption statusOption;
 }

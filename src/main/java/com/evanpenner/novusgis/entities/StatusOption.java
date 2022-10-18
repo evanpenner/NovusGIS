@@ -9,19 +9,24 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "feature_types")
-public class FeatureType {
+public class StatusOption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * The name of the status option.
+     */
     private String name;
 
-    private String icon;
-    private String color;
+    /**
+     * The permission that will be required.
+     */
+    private String scope;
 
-    private String style;
-
-    @ManyToMany
-    private List<StatusOption> statusOptions;
+    /**
+     * The possible values to be used.
+     */
+    @OneToMany
+    private List<StatusValue> values;
 }
