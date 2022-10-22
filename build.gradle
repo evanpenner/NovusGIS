@@ -24,6 +24,7 @@ ext {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
@@ -35,7 +36,7 @@ dependencies {
     implementation 'org.hibernate:hibernate-spatial:6.1.4.Final'
     // https://mvnrepository.com/artifact/org.locationtech.jts/jts-core
     implementation 'org.locationtech.jts:jts-core:1.19.0'
-    runtimeOnly 'com.h2database:h2:2.1.214'
+    runtimeOnly 'com.h2database:h2'
 
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
