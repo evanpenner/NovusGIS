@@ -19,4 +19,7 @@ public class PointFeature {
 
     @ManyToOne
     private FeatureType featureType;
+
+    @ManyToOne
+    private Project project;
 }

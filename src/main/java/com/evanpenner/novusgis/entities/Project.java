@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,7 +20,7 @@ public class Project {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "parentProject")
     private Project parentProject;
-    
+
     @OneToMany(mappedBy = "parentProject")
     @JsonBackReference
     private List<Project> subProjects;
@@ -33,4 +34,29 @@ public class Project {
 
     @OneToMany
     private List<LineFeature> lineFeatures;
+
+    public List<PointFeature> getPointFeatures() {
+        if (subProjects != null && subProjects.size() != 0) {
+            List<PointFeature> pointFeatures = new ArrayList<>();
+            for (Project subProj : subProjects) {
+                pointFeatures.addAll(subProj.getPointFeatures());
+            }
+            pointFeatures.addAll(this.pointFeatures);
+            return pointFeatures;
+        }
+        return this.pointFeatures;
+    }
+
+    public List<LineFeature> getLineFeatures() {
+        if (subProjects != null && subProjects.size() != 0) {
+            List<LineFeature> lineFeatures = new ArrayList<>();
+            for (Project subProj : subProjects) {
+                lineFeatures.addAll(subProj.getLineFeatures());
+            }
+            lineFeatures.addAll(this.lineFeatures);
+            return lineFeatures;
+        }
+        return this.lineFeatures;
+
+    }
 }
