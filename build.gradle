@@ -33,7 +33,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
-    implementation 'org.hibernate:hibernate-spatial:6.1.5.Final'
+    implementation 'org.hibernate:hibernate-spatial:6.1.7.Final'
     // https://mvnrepository.com/artifact/org.locationtech.jts/jts-core
     implementation 'org.locationtech.jts:jts-core:1.19.0'
     runtimeOnly 'com.h2database:h2'
